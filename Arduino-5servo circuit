@@ -1,0 +1,40 @@
+  Shown below the circuit 
+  
+  https://prnt.sc/16v6xr6
+  
+  a gif showing how it's working 
+  https://gyazo.com/6f8cf5cf4746b3c8e85d4645000c81a2
+  
+  code 
+  
+  #include <Servo.h>
+
+Servo  A,B,C,D,E;  
+int pos = 0;
+void setup() {
+  A.attach(8);
+  B.attach(9);
+  C.attach(10);
+  D.attach(11);
+  E.attach(12);
+  
+}
+void loop() {
+  for (pos = 0; pos <= 90 ; pos +=10)
+  A.write(pos);
+  B.write(pos);
+  C.write(pos);
+  D.write(pos);
+  E.write(pos); 
+  delay(3000);
+
+
+
+  for (pos = 90; pos >= 0; pos -=1)
+   A.write(pos);
+  B.write(pos);
+  C.write(pos);
+  D.write(pos);
+  E.write(pos); 
+  delay(3000);
+}
